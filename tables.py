@@ -13,6 +13,7 @@ db = SQLAlchemy(model_class=Base)
 
 class Room(db.Model):
     number = Column(Integer, primary_key=True)
+    values = Column(Integer)
 
 
 class User(db.Model):

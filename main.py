@@ -18,6 +18,34 @@ def user_create():
         app.db.session.commit()
         return 'succses'
     return abort(404)
+@app.route("/rooms/create", methods=["GET", "POST"])
+def room_create():
+    if request.method == "POST":
+        print('here')
+        room = Room(
+            number=request.json["number"],
+            values=request.json["values"],
+        )
+        print(room)
+        app.db.session.add(room)
+        app.db.session.commit()
+        return 'succses'
+    return abort(404)
+
+@app.route("/rooms/book", methods=["GET", "POST"])
+def room_create():
+    if request.method == "POST":
+        print('here')
+        timetable = Timetable(
+
+        )
+        print(timetable)
+        app.db.session.add(timetable)
+        app.db.session.commit()
+        return 'succses'
+    return abort(404)
+
+
 
 
 if __name__ == "__main__":
